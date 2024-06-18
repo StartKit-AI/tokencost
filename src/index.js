@@ -38,9 +38,13 @@ export function calculateCompletionCost(completion, model, opts = {}) {
   }
 }
 
-export function countMessageTokens() {}
+export function countMessageTokens(prompt) {
+  return getTokenSizeFromPrompt(prompt);
+}
 
-export function countStringTokens() {}
+export function countStringTokens(str) {
+  return getTokenSizeFromString(str);
+}
 
 function calculateStringPromptCost(str, model) {
   let costPerToken = models[model].input_cost_per_token;
