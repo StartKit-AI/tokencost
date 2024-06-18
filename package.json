@@ -1,0 +1,17 @@
+{
+  "name": "tokencost",
+  "version": "0.0.1",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gpt-tokenizer": "^2.1.2",
+    "image-size": "^1.1.1"
+  },
+  "devDependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}
