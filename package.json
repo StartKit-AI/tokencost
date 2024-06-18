@@ -1,7 +1,8 @@
 {
   "name": "tokencost",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.1.2",
+  "description": "Client side token counting & price estimation for LLMs ",
+  "repository": "git@github.com:startkit-ai/tokencost.git",
   "type": "module",
   "main": "index.js",
   "scripts": {},
