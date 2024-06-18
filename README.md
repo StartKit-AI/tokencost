@@ -65,7 +65,7 @@ const cost = calculateImageGenerationCost(imageOptions, "dall-e-3");
 And of identifying images with Vision:
 
 ```js
-import { calculateImageGenerationCost } from "tokencost";
+import { calculateImageDetectionCost } from "tokencost";
 
 const image = readFileSync("image.jpg");
 const cost = calculateImageDetectionCost(image, "gpt-4o");
