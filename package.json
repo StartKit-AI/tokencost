@@ -5,7 +5,9 @@
   "repository": "git@github.com:startkit-ai/tokencost.git",
   "type": "module",
   "main": "src/index.js",
-  "scripts": {},
+  "scripts": {
+    "postinstall": "node update.js"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {

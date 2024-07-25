@@ -5,7 +5,7 @@ import {
 } from "./tokenizer.js";
 
 import models from "../data/model_prices_and_context_window.json" assert { type: "json" };
-import { updatePrices } from "./update-prices.js";
+import { updateModels } from "./update-models.js";
 
 export function calculatePromptCost(prompt, model, opts = {}) {
   const modelData = models[model];
@@ -145,7 +145,7 @@ export function calculateImageGenerationCost({ size, quality }, model) {
 }
 
 export function update() {
-  return updatePrices();
+  return updateModels();
 }
 
 export function getImageModel(model, quality, size) {

@@ -5,7 +5,7 @@ import path from "path";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-export async function updatePrices() {
+export async function updateModels() {
   const response = await fetch(
     "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json"
   );
