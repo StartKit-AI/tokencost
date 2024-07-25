@@ -1,12 +1,5 @@
-import {
-  decode,
-  decodeAsyncGenerator,
-  decodeGenerator,
-  encode,
-  encodeChat,
-  encodeGenerator,
-  isWithinTokenLimit,
-} from "gpt-tokenizer";
+import { encode } from "gpt-tokenizer";
+import sizeOf from "image-size";
 
 /**
  * Calculates the total size in tokens for an array of prompts,
