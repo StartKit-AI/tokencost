@@ -85,6 +85,42 @@ const { duration } = transcription;
 const cost = calculateCompletionCost({ duration }, "whisper-1");
 ```
 
+# Models
+
+Fetch a list of all currently tracked models (updates from [LiteLLM's cost dictionary](https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json)).
+
+```js
+import { update, models, getModel } from "tokencost";
+
+// the last fetched model list (updated when the module is installed)
+console.log(models);
+// [
+//   "gpt-4": {
+//     "max_tokens": 4096,
+//     "max_input_tokens": 8192,
+//     "max_output_tokens": 4096,
+//     "input_cost_per_token": 0.00003,
+//     "output_cost_per_token": 0.00006,
+//     "mode": "chat",
+//     "supports_function_calling": true,
+//     "provider": "openai"
+//   },
+//   ...
+// ]
+
+// or you can grab a specific model
+const model = getModel("gpt-4o");
+
+// fetching image models is a little more complicated as they are
+// keyed on their quality and size
+let imageModel = getModel("hd/1024-x-1792/dall-e-3");
+// or
+imageModel = getImageModel("dall-e-3", { quality: "hd", size: "1024x1792" });
+
+// you can also manually update the model list (don't do it too often):
+await update();
+```
+
 # Contributing
 
 Contributions to TokenCost are welcome! Feel free to create an issue for any bug reports, complaints, or feature suggestions.

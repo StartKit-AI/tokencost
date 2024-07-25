@@ -9,9 +9,9 @@ export async function updateModels() {
   const response = await fetch(
     "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json"
   );
-  const pricesJson = await response.json();
-  const prices = Object.keys(pricesJson).reduce((out, key) => {
-    const { litellm_provider, ...rest } = pricesJson[key];
+  const modelsJSON = await response.json();
+  const models = Object.keys(modelsJSON).reduce((out, key) => {
+    const { litellm_provider, ...rest } = modelsJSON[key];
 
     return {
       ...out,
@@ -21,6 +21,7 @@ export async function updateModels() {
 
   await fs.writeFile(
     path.join(__dirname, "..", "data", "model_prices_and_context_window.json"),
-    JSON.stringify(prices, null, 2)
+    JSON.stringify(models, null, 2)
   );
+  return models;
 }

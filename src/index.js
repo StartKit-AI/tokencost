@@ -4,8 +4,10 @@ import {
   getTokensFromRawImages,
 } from "./tokenizer.js";
 
-import models from "../data/model_prices_and_context_window.json" assert { type: "json" };
+import modelsList from "../data/model_prices_and_context_window.json" assert { type: "json" };
 import { updateModels } from "./update-models.js";
+
+export let models = modelsList;
 
 export function calculatePromptCost(prompt, model, opts = {}) {
   const modelData = models[model];
@@ -49,6 +51,10 @@ export function countMessageTokens(prompt) {
 
 export function countStringTokens(str) {
   return getTokenSizeFromString(str);
+}
+
+export function getModels() {
+  return models;
 }
 
 export function getModel(model, opts = {}) {
@@ -144,8 +150,9 @@ export function calculateImageGenerationCost({ size, quality }, model) {
   return costPerPixel * width * height;
 }
 
-export function update() {
-  return updateModels();
+export async function update() {
+  models = await updateModels();
+  return models;
 }
 
 export function getImageModel(model, quality, size) {
