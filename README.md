@@ -108,7 +108,11 @@ console.log(models);
 //   ...
 // ]
 
-// or you can grab a specific model
+// or get all the models of a specific type:
+const chatModels = getModels("chat");
+// or type and provider
+const openAiImageModels = getModels("image-generation", { provider: "openai" });
+// or you can grab a specific model by it's key
 const model = getModel("gpt-4o");
 
 // fetching image models is a little more complicated as they are

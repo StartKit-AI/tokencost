@@ -53,10 +53,6 @@ export function countStringTokens(str) {
   return getTokenSizeFromString(str);
 }
 
-export function getModels() {
-  return models;
-}
-
 export function getModel(model, opts = {}) {
   if (opts.quality) {
     return getImageModel(model, opts.quality, opts.size);
@@ -78,7 +74,7 @@ export function getModelProvider(model) {
   return getModel(model)?.provider ?? null;
 }
 
-export function getAllModels(mode, providers = []) {
+export function getModels(mode, providers = []) {
   return Object.keys(models).filter((model) => {
     let match = true;
     if (mode && models[model].mode !== mode) {
