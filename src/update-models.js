@@ -15,7 +15,7 @@ export async function updateModels() {
 
     return {
       ...out,
-      [key]: { ...rest, provider: litellm_provider },
+      [key]: { ...convertObjectKeysToCamel(rest), provider: litellm_provider },
     };
   }, {});
 
@@ -24,4 +24,23 @@ export async function updateModels() {
     JSON.stringify(models, null, 2)
   );
   return models;
+}
+
+function convertObjectKeysToCamel(obj) {
+  if (Array.isArray(obj)) {
+    return obj.map(convertObjectKeysToCamel);
+  } else if (obj !== null && obj.constructor === Object) {
+    return Object.keys(obj).reduce((acc, key) => {
+      const camelCaseKey = snakeToCamel(key);
+      acc[camelCaseKey] = convertObjectKeysToCamel(obj[key]);
+      return acc;
+    }, {});
+  }
+  return obj;
+}
+
+function snakeToCamel(snakeCase) {
+  return snakeCase.replace(/(_\w)/g, function (match) {
+    return match[1].toUpperCase();
+  });
 }

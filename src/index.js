@@ -75,16 +75,18 @@ export function getModelProvider(model) {
 }
 
 export function getModels(mode, providers = []) {
-  return Object.keys(models).filter((model) => {
-    let match = true;
-    if (mode && models[model].mode !== mode) {
-      match = false;
-    }
-    if (providers.length && !providers.includes(models[model].provider)) {
-      match = false;
-    }
-    return match;
-  });
+  return Object.keys(models)
+    .filter((model) => {
+      let match = true;
+      if (mode && models[model].mode !== mode) {
+        match = false;
+      }
+      if (providers.length && !providers.includes(models[model].provider)) {
+        match = false;
+      }
+      return match;
+    })
+    .map((key) => ({ ...models[key], name: key }));
 }
 
 export function getEmbeddingsDimension(model) {

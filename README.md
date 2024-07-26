@@ -90,7 +90,7 @@ const cost = calculateCompletionCost({ duration }, "whisper-1");
 Fetch a list of all currently tracked models (updates from [LiteLLM's cost dictionary](https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json)).
 
 ```js
-import { update, models, getModel } from "tokencost";
+import { update, models, getModel, getModels } from "tokencost";
 
 // the last fetched model list (updated when the module is installed)
 console.log(models);
@@ -110,9 +110,10 @@ console.log(models);
 
 // or get all the models of a specific type:
 const chatModels = getModels("chat");
+
 // or type and provider
 const openAiImageModels = getModels("image-generation", { provider: "openai" });
-// or you can grab a specific model by it's key
+// or you can grab a specific model by its key
 const model = getModel("gpt-4o");
 
 // fetching image models is a little more complicated as they are
