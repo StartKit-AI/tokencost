@@ -70,6 +70,13 @@ export function getAllModes() {
   );
 }
 
+export function addCustomModels(customModels = {}) {
+  const custom = Object.entries(customModels).reduce((out, [key, value]) => {
+    return { ...out, [key]: { ...value, isCustom: true } };
+  }, {});
+  models = { ...models, ...custom };
+}
+
 export function getModelProvider(model) {
   return getModel(model)?.provider ?? null;
 }
@@ -99,26 +106,26 @@ export function getMaxTokens(model) {
     throw new Error(`Model ${model} not found in model list`);
   }
   return {
-    outputTokens: modelData.max_tokens,
-    inputTokens: modelData.max_input_tokens,
+    outputTokens: modelData.maxTokens,
+    inputTokens: modelData.maxInputTokens,
   };
 }
 
 export function getInputCostPerToken(model) {
-  return models[model].input_cost_per_token;
+  return models[model].inputCostPerToken;
 }
 export function getOutputCostPerToken(model) {
-  return models[model].input_cost_per_token;
+  return models[model].inputCostPerToken;
 }
 
 function calculateStringPromptCost(str, model) {
-  let costPerToken = models[model].input_cost_per_token;
+  let costPerToken = models[model].inputCostPerToken;
   const tokenSize = getTokenSizeFromString(str);
   return tokenSize * costPerToken;
 }
 
 function calculateStringGenerationCost(str, model) {
-  let costPerToken = models[model].output_cost_per_token;
+  let costPerToken = models[model].maxOutputTokens;
   const tokenSize = getTokenSizeFromString(str);
   return tokenSize * costPerToken;
 }
@@ -127,7 +134,7 @@ function calculateChatPromptCost(prompt, model, { images = [] }) {
   if (typeof prompt === "string") {
     return calculateStringPromptCost(prompt, model);
   }
-  let costPerToken = models[model].input_cost_per_token;
+  let costPerToken = models[model].inputCostPerToken;
   const tokenSize = getTokenSizeFromPrompt(prompt, { images });
   if (images.length) {
     tokenSize += getTokensFromRawImages(images);
@@ -137,13 +144,13 @@ function calculateChatPromptCost(prompt, model, { images = [] }) {
 
 export function calculateImageDetectionCost(image, model) {
   const tokenSize = getTokensFromRawImages([image]);
-  const costPerToken = models[model].input_cost_per_token;
+  const costPerToken = models[model].inputCostPerToken;
   return tokenSize * costPerToken;
 }
 
 export function calculateImageGenerationCost({ size, quality }, model) {
   const modelData = getImageModel(model, quality, size);
-  const costPerPixel = modelData.input_cost_per_pixel;
+  const costPerPixel = modelData.inputCostPerPixel;
   const [width, height] = size.split("x");
   return costPerPixel * width * height;
 }
@@ -165,7 +172,14 @@ export function getImageModel(model, quality, size) {
   return modelData;
 }
 
+function parseImageModelKey(modelData) {
+  return {
+    quality: 0,
+    size: 0,
+  };
+}
+
 function calculateSpeechToTextModelCost({ duration }, model) {
-  const costPerSecond = models[model].output_cost_per_second;
+  const costPerSecond = models[model].outputCostPerSecond;
   return costPerSecond * duration;
 }

@@ -289,7 +289,7 @@
     "inputCostPerToken": 0.000002,
     "outputCostPerToken": 0.000002,
     "mode": "completion",
-    "provider": "text-completion-openai"
+    "provider": "openai"
   },
   "ft:babbage-002": {
     "maxTokens": 16384,
@@ -298,7 +298,7 @@
     "inputCostPerToken": 4e-7,
     "outputCostPerToken": 4e-7,
     "mode": "completion",
-    "provider": "text-completion-openai"
+    "provider": "openai"
   },
   "text-embedding-3-large": {
     "maxTokens": 8191,
@@ -610,7 +610,7 @@
     "inputCostPerToken": 0.0000015,
     "outputCostPerToken": 0.000002,
     "mode": "completion",
-    "provider": "text-completion-openai"
+    "provider": "openai"
   },
   "azure/gpt-35-turbo-instruct": {
     "maxTokens": 4097,
@@ -618,7 +618,7 @@
     "inputCostPerToken": 0.0000015,
     "outputCostPerToken": 0.000002,
     "mode": "completion",
-    "provider": "text-completion-openai"
+    "provider": "openai"
   },
   "azure/mistral-large-latest": {
     "maxTokens": 32000,
@@ -797,7 +797,7 @@
     "inputCostPerToken": 4e-7,
     "outputCostPerToken": 4e-7,
     "mode": "completion",
-    "provider": "text-completion-openai"
+    "provider": "openai"
   },
   "davinci-002": {
     "maxTokens": 16384,
@@ -806,7 +806,7 @@
     "inputCostPerToken": 0.000002,
     "outputCostPerToken": 0.000002,
     "mode": "completion",
-    "provider": "text-completion-openai"
+    "provider": "openai"
   },
   "gpt-3.5-turbo-instruct": {
     "maxTokens": 4096,
@@ -815,7 +815,7 @@
     "inputCostPerToken": 0.0000015,
     "outputCostPerToken": 0.000002,
     "mode": "completion",
-    "provider": "text-completion-openai"
+    "provider": "openai"
   },
   "gpt-3.5-turbo-instruct-0914": {
     "maxTokens": 4097,
@@ -824,7 +824,7 @@
     "inputCostPerToken": 0.0000015,
     "outputCostPerToken": 0.000002,
     "mode": "completion",
-    "provider": "text-completion-openai"
+    "provider": "openai"
   },
   "claude-instant-1": {
     "maxTokens": 8191,
@@ -2027,6 +2027,46 @@
     "source": "https://cloud.google.com/vertex-ai/generative-ai/pricing#partner-models",
     "provider": "vertex_ai-llama_models"
   },
+  "vertex_ai/mistral-large@latest": {
+    "maxTokens": 8191,
+    "maxInputTokens": 128000,
+    "maxOutputTokens": 8191,
+    "inputCostPerToken": 0.000003,
+    "outputCostPerToken": 0.000009,
+    "mode": "chat",
+    "supportsFunctionCalling": true,
+    "provider": "vertex_ai-mistral_models"
+  },
+  "vertex_ai/mistral-large@2407": {
+    "maxTokens": 8191,
+    "maxInputTokens": 128000,
+    "maxOutputTokens": 8191,
+    "inputCostPerToken": 0.000003,
+    "outputCostPerToken": 0.000009,
+    "mode": "chat",
+    "supportsFunctionCalling": true,
+    "provider": "vertex_ai-mistral_models"
+  },
+  "vertex_ai/mistral-nemo@2407": {
+    "maxTokens": 128000,
+    "maxInputTokens": 128000,
+    "maxOutputTokens": 128000,
+    "inputCostPerToken": 0.000003,
+    "outputCostPerToken": 0.000003,
+    "mode": "chat",
+    "supportsFunctionCalling": true,
+    "provider": "vertex_ai-mistral_models"
+  },
+  "vertex_ai/codestral@2405": {
+    "maxTokens": 128000,
+    "maxInputTokens": 128000,
+    "maxOutputTokens": 128000,
+    "inputCostPerToken": 0.000001,
+    "outputCostPerToken": 0.000003,
+    "mode": "chat",
+    "supportsFunctionCalling": true,
+    "provider": "vertex_ai-mistral_models"
+  },
   "vertex_ai/imagegeneration@006": {
     "costPerImage": 0.02,
     "mode": "image_generation",
@@ -2993,6 +3033,7 @@
     "inputCostPerToken": 0.000008,
     "outputCostPerToken": 0.000024,
     "mode": "chat",
+    "supportsFunctionCalling": true,
     "provider": "bedrock"
   },
   "mistral.mistral-large-2407-v1:0": {
@@ -3002,6 +3043,7 @@
     "inputCostPerToken": 0.000003,
     "outputCostPerToken": 0.000009,
     "mode": "chat",
+    "supportsFunctionCalling": true,
     "provider": "bedrock"
   },
   "bedrock/us-west-2/mistral.mixtral-8x7b-instruct-v0:1": {
@@ -3074,6 +3116,7 @@
     "inputCostPerToken": 0.000008,
     "outputCostPerToken": 0.000024,
     "mode": "chat",
+    "supportsFunctionCalling": true,
     "provider": "bedrock"
   },
   "bedrock/eu-west-3/mistral.mistral-large-2402-v1:0": {
@@ -3083,6 +3126,7 @@
     "inputCostPerToken": 0.0000104,
     "outputCostPerToken": 0.0000312,
     "mode": "chat",
+    "supportsFunctionCalling": true,
     "provider": "bedrock"
   },
   "anthropic.claude-3-sonnet-20240229-v1:0": {
@@ -3955,6 +3999,16 @@
     "mode": "chat",
     "provider": "ollama"
   },
+  "ollama/llama3.1": {
+    "maxTokens": 8192,
+    "maxInputTokens": 8192,
+    "maxOutputTokens": 8192,
+    "inputCostPerToken": 0,
+    "outputCostPerToken": 0,
+    "mode": "chat",
+    "supportsFunctionCalling": true,
+    "provider": "ollama"
+  },
   "ollama/mistral": {
     "maxTokens": 8192,
     "maxInputTokens": 8192,
@@ -4328,7 +4382,7 @@
     "mode": "chat",
     "provider": "perplexity"
   },
-  "fireworks_ai/firefunction-v2": {
+  "fireworks_ai/accounts/fireworks/models/firefunction-v2": {
     "maxTokens": 8192,
     "maxInputTokens": 8192,
     "maxOutputTokens": 8192,
@@ -4339,7 +4393,7 @@
     "source": "https://fireworks.ai/pricing",
     "provider": "fireworks_ai"
   },
-  "fireworks_ai/mixtral-8x22b-instruct-hf": {
+  "fireworks_ai/accounts/fireworks/models/mixtral-8x22b-instruct-hf": {
     "maxTokens": 65536,
     "maxInputTokens": 65536,
     "maxOutputTokens": 65536,
@@ -4350,7 +4404,7 @@
     "source": "https://fireworks.ai/pricing",
     "provider": "fireworks_ai"
   },
-  "fireworks_ai/qwen2-72b-instruct": {
+  "fireworks_ai/accounts/fireworks/models/qwen2-72b-instruct": {
     "maxTokens": 32768,
     "maxInputTokens": 32768,
     "maxOutputTokens": 32768,
@@ -4361,7 +4415,7 @@
     "source": "https://fireworks.ai/pricing",
     "provider": "fireworks_ai"
   },
-  "fireworks_ai/yi-large": {
+  "fireworks_ai/accounts/fireworks/models/yi-large": {
     "maxTokens": 32768,
     "maxInputTokens": 32768,
     "maxOutputTokens": 32768,
@@ -4372,7 +4426,7 @@
     "source": "https://fireworks.ai/pricing",
     "provider": "fireworks_ai"
   },
-  "fireworks_ai/deepseek-coder-v2-instruct": {
+  "fireworks_ai/accounts/fireworks/models/deepseek-coder-v2-instruct": {
     "maxTokens": 65536,
     "maxInputTokens": 65536,
     "maxOutputTokens": 8192,

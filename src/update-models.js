@@ -11,11 +11,16 @@ export async function updateModels() {
   );
   const modelsJSON = await response.json();
   const models = Object.keys(modelsJSON).reduce((out, key) => {
-    const { litellm_provider, ...rest } = modelsJSON[key];
+    let name = key;
+    const { litellm_provider, ...rest } = modelsJSON[name];
+    let provider = litellm_provider;
+    if (provider === "text-completion-openai") {
+      provider = "openai";
+    }
 
     return {
       ...out,
-      [key]: { ...convertObjectKeysToCamel(rest), provider: litellm_provider },
+      [name]: { ...convertObjectKeysToCamel(rest), provider },
     };
   }, {});
 
