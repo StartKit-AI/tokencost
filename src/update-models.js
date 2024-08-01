@@ -2,33 +2,58 @@ import fetch from "node-fetch";
 import { fileURLToPath } from "url";
 import fs from "fs/promises";
 import path from "path";
+import modelsData from "../data/model_prices_and_context_window.json" assert { type: "json" };
 
+const { lastUpdated, models } = modelsData;
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export async function updateModels() {
-  const response = await fetch(
-    "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json"
-  );
-  const modelsJSON = await response.json();
-  const models = Object.keys(modelsJSON).reduce((out, key) => {
-    let name = key;
-    const { litellm_provider, ...rest } = modelsJSON[name];
-    let provider = litellm_provider;
-    if (provider === "text-completion-openai") {
-      provider = "openai";
-    }
+  // if the list has been updated in the last hour, don't update it
+  if (Date.now() - new Date(lastUpdated) < 360000) {
+    console.log("[tokencost]: models are up to date");
+    return models;
+  }
+  try {
+    const response = await fetch(
+      "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json"
+    );
+    const modelsJSON = await response.json();
+    const models = Object.keys(modelsJSON).reduce((out, key) => {
+      let name = key;
+      const { litellm_provider, ...rest } = modelsJSON[name];
+      let provider = litellm_provider;
+      if (provider === "text-completion-openai") {
+        provider = "openai";
+      }
 
-    return {
-      ...out,
-      [name]: { ...convertObjectKeysToCamel(rest), provider },
-    };
-  }, {});
+      return {
+        ...out,
+        [name]: { ...convertObjectKeysToCamel(rest), provider },
+      };
+    }, {});
 
-  await fs.writeFile(
-    path.join(__dirname, "..", "data", "model_prices_and_context_window.json"),
-    JSON.stringify(models, null, 2)
-  );
-  return models;
+    await fs.writeFile(
+      path.join(
+        __dirname,
+        "..",
+        "data",
+        "model_prices_and_context_window.json"
+      ),
+      JSON.stringify(
+        {
+          lastUpdated: Date.now(),
+          models,
+        },
+        null,
+        2
+      )
+    );
+
+    return models;
+  } catch (err) {
+    console.log("[tokencost]: failed to fetch new models");
+    return null;
+  }
 }
 
 function convertObjectKeysToCamel(obj) {

@@ -4,10 +4,10 @@ import {
   getTokensFromRawImages,
 } from "./tokenizer.js";
 
-import modelsList from "../data/model_prices_and_context_window.json" assert { type: "json" };
+import modelsData from "../data/model_prices_and_context_window.json" assert { type: "json" };
 import { updateModels } from "./update-models.js";
 
-export let models = modelsList;
+export let models = modelsData.models;
 
 export function calculatePromptCost(prompt, model, opts = {}) {
   const modelData = models[model];
@@ -156,20 +156,27 @@ export function calculateImageGenerationCost({ size, quality }, model) {
 }
 
 export async function update() {
-  models = await updateModels();
+  const updatedModels = await updateModels();
+  if (updatedModels) {
+    models = updatedModels;
+  }
   return models;
 }
 
 export function getImageModel(model, quality, size) {
+  let modelData = models[getImageModelName(model, quality, size)];
+  return modelData;
+}
+
+export function getImageModelName(model, quality, size) {
   let sizeKey = size;
   if (!size.includes("-x-")) {
     sizeKey = size.replace("x", "-x-");
   }
-  if (quality === "hd") {
-    sizeKey = `hd/${sizeKey}`;
+  if (quality) {
+    sizeKey = `${quality}/${sizeKey}`;
   }
-  let modelData = models[`${sizeKey}/${model}`];
-  return modelData;
+  return `${sizeKey}/${model}`;
 }
 
 function parseImageModelKey(modelData) {
