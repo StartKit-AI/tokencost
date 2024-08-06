@@ -7,6 +7,16 @@ import {
 import modelsData from "../data/model_prices_and_context_window.json" assert { type: "json" };
 import { updateModels } from "./update-models.js";
 
+const modes = [
+  "chat",
+  "completion",
+  "embedding",
+  "moderations",
+  "image_generation",
+  "audio_transcription",
+  "audio_speech",
+];
+
 export let models = modelsData.models;
 
 export function calculatePromptCost(prompt, model, opts = {}) {
@@ -65,9 +75,7 @@ export function getModelMode(model, opts) {
 }
 
 export function getAllModes() {
-  return [...new Set(Object.values(models).map((model) => model.mode))].filter(
-    Boolean
-  );
+  return modes;
 }
 
 export function addCustomModels(customModels = {}) {

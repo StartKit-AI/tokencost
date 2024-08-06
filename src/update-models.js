@@ -20,6 +20,9 @@ export async function updateModels() {
     const modelsJSON = await response.json();
     const models = Object.keys(modelsJSON).reduce((out, key) => {
       let name = key;
+      if (name === "sample_spec") {
+        return out;
+      }
       const { litellm_provider, ...rest } = modelsJSON[name];
       let provider = litellm_provider;
       if (provider === "text-completion-openai") {

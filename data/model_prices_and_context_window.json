@@ -1,5 +1,5 @@
 {
-  "lastUpdated": 1722499200958,
+  "lastUpdated": 1722949201348,
   "models": {
     "gpt-4": {
       "maxTokens": 4096,
@@ -24,9 +24,9 @@
       "provider": "openai"
     },
     "gpt-4o-mini": {
-      "maxTokens": 4096,
+      "maxTokens": 16384,
       "maxInputTokens": 128000,
-      "maxOutputTokens": 4096,
+      "maxOutputTokens": 16384,
       "inputCostPerToken": 1.5e-7,
       "outputCostPerToken": 6e-7,
       "mode": "chat",
@@ -36,9 +36,9 @@
       "provider": "openai"
     },
     "gpt-4o-mini-2024-07-18": {
-      "maxTokens": 4096,
+      "maxTokens": 16384,
       "maxInputTokens": 128000,
-      "maxOutputTokens": 4096,
+      "maxOutputTokens": 16384,
       "inputCostPerToken": 1.5e-7,
       "outputCostPerToken": 6e-7,
       "mode": "chat",
@@ -456,6 +456,30 @@
       "maxOutputTokens": 4096,
       "inputCostPerToken": 0.000005,
       "outputCostPerToken": 0.000015,
+      "mode": "chat",
+      "supportsFunctionCalling": true,
+      "supportsParallelFunctionCalling": true,
+      "supportsVision": true,
+      "provider": "azure"
+    },
+    "azure/global-standard/gpt-4o-mini": {
+      "maxTokens": 16384,
+      "maxInputTokens": 128000,
+      "maxOutputTokens": 16384,
+      "inputCostPerToken": 1.5e-7,
+      "outputCostPerToken": 6e-7,
+      "mode": "chat",
+      "supportsFunctionCalling": true,
+      "supportsParallelFunctionCalling": true,
+      "supportsVision": true,
+      "provider": "azure"
+    },
+    "azure/gpt-4o-mini": {
+      "maxTokens": 16384,
+      "maxInputTokens": 128000,
+      "maxOutputTokens": 16384,
+      "inputCostPerToken": 1.65e-7,
+      "outputCostPerToken": 6.6e-7,
       "mode": "chat",
       "supportsFunctionCalling": true,
       "supportsParallelFunctionCalling": true,
@@ -1022,6 +1046,7 @@
       "maxInputTokens": 32000,
       "maxOutputTokens": 4096,
       "inputCostPerToken": 1.4e-7,
+      "inputCostPerTokenCacheHit": 1.4e-8,
       "outputCostPerToken": 2.8e-7,
       "mode": "chat",
       "provider": "deepseek"
@@ -1071,6 +1096,7 @@
       "maxInputTokens": 128000,
       "maxOutputTokens": 4096,
       "inputCostPerToken": 1.4e-7,
+      "inputCostPerTokenCacheHit": 1.4e-8,
       "outputCostPerToken": 2.8e-7,
       "mode": "chat",
       "provider": "deepseek"
@@ -2049,11 +2075,31 @@
       "supportsFunctionCalling": true,
       "provider": "vertex_ai-mistral_models"
     },
+    "vertex_ai/mistral-nemo@latest": {
+      "maxTokens": 128000,
+      "maxInputTokens": 128000,
+      "maxOutputTokens": 128000,
+      "inputCostPerToken": 0.000003,
+      "outputCostPerToken": 0.000003,
+      "mode": "chat",
+      "supportsFunctionCalling": true,
+      "provider": "vertex_ai-mistral_models"
+    },
     "vertex_ai/mistral-nemo@2407": {
       "maxTokens": 128000,
       "maxInputTokens": 128000,
       "maxOutputTokens": 128000,
       "inputCostPerToken": 0.000003,
+      "outputCostPerToken": 0.000003,
+      "mode": "chat",
+      "supportsFunctionCalling": true,
+      "provider": "vertex_ai-mistral_models"
+    },
+    "vertex_ai/codestral@latest": {
+      "maxTokens": 128000,
+      "maxInputTokens": 128000,
+      "maxOutputTokens": 128000,
+      "inputCostPerToken": 0.000001,
       "outputCostPerToken": 0.000003,
       "mode": "chat",
       "supportsFunctionCalling": true,
@@ -2282,6 +2328,23 @@
       "provider": "gemini"
     },
     "gemini/gemini-1.5-pro": {
+      "maxTokens": 8192,
+      "maxInputTokens": 2097152,
+      "maxOutputTokens": 8192,
+      "inputCostPerToken": 0.0000035,
+      "inputCostPerTokenAbove128kTokens": 0.000007,
+      "outputCostPerToken": 0.0000105,
+      "outputCostPerTokenAbove128kTokens": 0.000021,
+      "mode": "chat",
+      "supportsSystemMessages": true,
+      "supportsFunctionCalling": true,
+      "supportsVision": true,
+      "supportsToolChoice": true,
+      "supportsResponseSchema": true,
+      "source": "https://ai.google.dev/pricing",
+      "provider": "gemini"
+    },
+    "gemini/gemini-1.5-pro-exp-0801": {
       "maxTokens": 8192,
       "maxInputTokens": 2097152,
       "maxOutputTokens": 8192,
@@ -4654,6 +4717,26 @@
       "outputCostPerToken": 0,
       "mode": "embedding",
       "provider": "voyage"
+    },
+    "databricks/databricks-meta-llama-3-1-405b-instruct": {
+      "maxTokens": 128000,
+      "maxInputTokens": 128000,
+      "maxOutputTokens": 128000,
+      "inputCostPerToken": 0.000005,
+      "outputCostPerToken": 0.000015,
+      "mode": "chat",
+      "source": "https://www.databricks.com/product/pricing/foundation-model-serving",
+      "provider": "databricks"
+    },
+    "databricks/databricks-meta-llama-3-1-70b-instruct": {
+      "maxTokens": 128000,
+      "maxInputTokens": 128000,
+      "maxOutputTokens": 128000,
+      "inputCostPerToken": 0.000001,
+      "outputCostPerToken": 0.000003,
+      "mode": "chat",
+      "source": "https://www.databricks.com/product/pricing/foundation-model-serving",
+      "provider": "databricks"
     },
     "databricks/databricks-dbrx-instruct": {
       "maxTokens": 32768,
