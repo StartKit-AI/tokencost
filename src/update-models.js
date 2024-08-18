@@ -18,6 +18,8 @@ export async function updateModels() {
       "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json"
     );
     const modelsJSON = await response.json();
+    let genericModels = {};
+    let imageModels = {};
     const models = Object.keys(modelsJSON).reduce((out, key) => {
       let name = key;
       if (name === "sample_spec") {
@@ -29,9 +31,62 @@ export async function updateModels() {
         provider = "openai";
       }
 
+      if (rest.mode === "image_generation") {
+        // add a generic model for the actual image model
+        // without the size and quality
+        const parts = name.split("/");
+        const imageModelName = parts.pop();
+        let size;
+        let quality;
+        for (let part of parts) {
+          if (part.includes("-x-")) {
+            size = part;
+          } else {
+            quality = part;
+          }
+        }
+        if (!imageModels[imageModelName]) {
+          imageModels[imageModelName] = {
+            ...convertObjectKeysToCamel(rest),
+            sizes: [],
+            qualities: [],
+            providers: [],
+          };
+        }
+        if (size && !imageModels[imageModelName].sizes.includes(size)) {
+          imageModels[imageModelName].sizes.push(size);
+        }
+        if (
+          quality &&
+          !imageModels[imageModelName].qualities.includes(quality)
+        ) {
+          imageModels[imageModelName].qualities.push(quality);
+        }
+        if (!imageModels[imageModelName].providers.includes(provider)) {
+          imageModels[imageModelName].providers.push(provider);
+        }
+      } else if (name.includes("/")) {
+        const parts = name.split("/");
+        const genericModelName = parts.pop();
+        const genericProvider = parts.join("/");
+        if (!genericModels[genericModelName]) {
+          genericModels[genericModelName] = {
+            providers: [],
+          };
+        }
+        if (
+          !genericModels[genericModelName].providers.includes(genericProvider)
+        ) {
+          genericModels[genericModelName].providers.push(genericProvider);
+        }
+      }
+
       return {
         ...out,
-        [name]: { ...convertObjectKeysToCamel(rest), provider },
+        [name]: {
+          ...convertObjectKeysToCamel(rest),
+          provider,
+        },
       };
     }, {});
 
@@ -46,6 +101,8 @@ export async function updateModels() {
         {
           lastUpdated: Date.now(),
           models,
+          genericModels,
+          imageModels,
         },
         null,
         2

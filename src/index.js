@@ -17,7 +17,9 @@ const modes = [
   "audio_speech",
 ];
 
-export let models = modelsData.models;
+export let models = modelsData.models ?? [];
+let genericModels = modelsData.genericModels ?? [];
+let imageModels = modelsData.imageModels ?? [];
 
 export function calculatePromptCost(prompt, model, opts = {}) {
   const modelData = models[model];
@@ -63,11 +65,21 @@ export function countStringTokens(str) {
   return getTokenSizeFromString(str);
 }
 
-export function getModel(model, opts = {}) {
-  if (opts.quality) {
-    return getImageModel(model, opts.quality, opts.size);
+export function getModel(model) {
+  let m = models[model];
+  if (!m) {
+    // check if there is a generic model named this
+    const genericModel = genericModels[model];
+    if (genericModel) {
+      return {
+        ambiguous: true,
+        options: genericModel.providers.map((p) => `${p}/${model}`),
+      };
+    }
+    // check if there is an image model named this
+    m = imageModels[model];
   }
-  return models[model] ?? null;
+  return m ?? null;
 }
 
 export function getModelMode(model, opts) {
@@ -90,18 +102,19 @@ export function getModelProvider(model) {
 }
 
 export function getModels(mode, providers = []) {
-  return Object.keys(models)
+  const allModels = { ...models, ...imageModels };
+  return Object.keys(allModels)
     .filter((model) => {
       let match = true;
-      if (mode && models[model].mode !== mode) {
+      if (mode && allModels[model].mode !== mode) {
         match = false;
       }
-      if (providers.length && !providers.includes(models[model].provider)) {
+      if (providers.length && !providers.includes(allModels[model].provider)) {
         match = false;
       }
       return match;
     })
-    .map((key) => ({ ...models[key], name: key }));
+    .map((key) => ({ ...allModels[key], name: key }));
 }
 
 export function getEmbeddingsDimension(model) {
@@ -157,7 +170,11 @@ export function calculateImageDetectionCost(image, model) {
 }
 
 export function calculateImageGenerationCost({ size, quality }, model) {
-  const modelData = getImageModel(model, quality, size);
+  const modelData = getModel(model);
+  const costPerImage = modelData.inputCostPerImage;
+  if (costPerImage) {
+    return costPerImage;
+  }
   const costPerPixel = modelData.inputCostPerPixel;
   const [width, height] = size.split("x");
   return costPerPixel * width * height;
