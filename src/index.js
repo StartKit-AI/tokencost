@@ -4,7 +4,7 @@ import {
   getTokensFromRawImages,
 } from "./tokenizer.js";
 
-import modelsData from "../data/model_prices_and_context_window.json" assert { type: "json" };
+import modelsData from "../data/model_prices_and_context_window.json" with { type: "json" };
 import { updateModels } from "./update-models.js";
 
 const modes = [

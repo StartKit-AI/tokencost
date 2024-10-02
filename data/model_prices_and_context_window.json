@@ -1,5 +1,5 @@
 {
-  "lastUpdated": 1723998394680,
+  "lastUpdated": 1726676736180,
   "models": {
     "gpt-4": {
       "maxTokens": 4096,
@@ -41,6 +41,54 @@
       "maxOutputTokens": 16384,
       "inputCostPerToken": 1.5e-7,
       "outputCostPerToken": 6e-7,
+      "mode": "chat",
+      "supportsFunctionCalling": true,
+      "supportsParallelFunctionCalling": true,
+      "supportsVision": true,
+      "provider": "openai"
+    },
+    "o1-mini": {
+      "maxTokens": 65536,
+      "maxInputTokens": 128000,
+      "maxOutputTokens": 65536,
+      "inputCostPerToken": 0.000003,
+      "outputCostPerToken": 0.000012,
+      "mode": "chat",
+      "supportsFunctionCalling": true,
+      "supportsParallelFunctionCalling": true,
+      "supportsVision": true,
+      "provider": "openai"
+    },
+    "o1-mini-2024-09-12": {
+      "maxTokens": 65536,
+      "maxInputTokens": 128000,
+      "maxOutputTokens": 65536,
+      "inputCostPerToken": 0.000003,
+      "outputCostPerToken": 0.000012,
+      "mode": "chat",
+      "supportsFunctionCalling": true,
+      "supportsParallelFunctionCalling": true,
+      "supportsVision": true,
+      "provider": "openai"
+    },
+    "o1-preview": {
+      "maxTokens": 32768,
+      "maxInputTokens": 128000,
+      "maxOutputTokens": 32768,
+      "inputCostPerToken": 0.000015,
+      "outputCostPerToken": 0.00006,
+      "mode": "chat",
+      "supportsFunctionCalling": true,
+      "supportsParallelFunctionCalling": true,
+      "supportsVision": true,
+      "provider": "openai"
+    },
+    "o1-preview-2024-09-12": {
+      "maxTokens": 32768,
+      "maxInputTokens": 128000,
+      "maxOutputTokens": 32768,
+      "inputCostPerToken": 0.000015,
+      "outputCostPerToken": 0.00006,
       "mode": "chat",
       "supportsFunctionCalling": true,
       "supportsParallelFunctionCalling": true,
@@ -276,8 +324,35 @@
       "provider": "openai"
     },
     "ft:gpt-3.5-turbo": {
-      "maxTokens": 4097,
-      "maxInputTokens": 4097,
+      "maxTokens": 4096,
+      "maxInputTokens": 16385,
+      "maxOutputTokens": 4096,
+      "inputCostPerToken": 0.000003,
+      "outputCostPerToken": 0.000006,
+      "mode": "chat",
+      "provider": "openai"
+    },
+    "ft:gpt-3.5-turbo-0125": {
+      "maxTokens": 4096,
+      "maxInputTokens": 16385,
+      "maxOutputTokens": 4096,
+      "inputCostPerToken": 0.000003,
+      "outputCostPerToken": 0.000006,
+      "mode": "chat",
+      "provider": "openai"
+    },
+    "ft:gpt-3.5-turbo-1106": {
+      "maxTokens": 4096,
+      "maxInputTokens": 16385,
+      "maxOutputTokens": 4096,
+      "inputCostPerToken": 0.000003,
+      "outputCostPerToken": 0.000006,
+      "mode": "chat",
+      "provider": "openai"
+    },
+    "ft:gpt-3.5-turbo-0613": {
+      "maxTokens": 4096,
+      "maxInputTokens": 4096,
       "maxOutputTokens": 4096,
       "inputCostPerToken": 0.000003,
       "outputCostPerToken": 0.000006,
@@ -293,6 +368,18 @@
       "mode": "chat",
       "supportsFunctionCalling": true,
       "source": "OpenAI needs to add pricing for this ft model, will be updated when added by OpenAI. Defaulting to base model pricing",
+      "provider": "openai"
+    },
+    "ft:gpt-4o-2024-08-06": {
+      "maxTokens": 16384,
+      "maxInputTokens": 128000,
+      "maxOutputTokens": 16384,
+      "inputCostPerToken": 0.00000375,
+      "outputCostPerToken": 0.000015,
+      "mode": "chat",
+      "supportsFunctionCalling": true,
+      "supportsParallelFunctionCalling": true,
+      "supportsVision": true,
       "provider": "openai"
     },
     "ft:gpt-4o-mini-2024-07-18": {
@@ -479,6 +566,30 @@
       "maxOutputTokens": 4096,
       "inputCostPerToken": 0.000005,
       "outputCostPerToken": 0.000015,
+      "mode": "chat",
+      "supportsFunctionCalling": true,
+      "supportsParallelFunctionCalling": true,
+      "supportsVision": true,
+      "provider": "azure"
+    },
+    "azure/gpt-4o-2024-08-06": {
+      "maxTokens": 16384,
+      "maxInputTokens": 128000,
+      "maxOutputTokens": 16384,
+      "inputCostPerToken": 0.00000275,
+      "outputCostPerToken": 0.000011,
+      "mode": "chat",
+      "supportsFunctionCalling": true,
+      "supportsParallelFunctionCalling": true,
+      "supportsVision": true,
+      "provider": "azure"
+    },
+    "azure/global-standard/gpt-4o-2024-08-06": {
+      "maxTokens": 16384,
+      "maxInputTokens": 128000,
+      "maxOutputTokens": 16384,
+      "inputCostPerToken": 0.0000025,
+      "outputCostPerToken": 0.00001,
       "mode": "chat",
       "supportsFunctionCalling": true,
       "supportsParallelFunctionCalling": true,
@@ -1250,6 +1361,26 @@
       "supportsFunctionCalling": true,
       "provider": "groq"
     },
+    "cerebras/llama3.1-8b": {
+      "maxTokens": 128000,
+      "maxInputTokens": 128000,
+      "maxOutputTokens": 128000,
+      "inputCostPerToken": 1e-7,
+      "outputCostPerToken": 1e-7,
+      "mode": "chat",
+      "supportsFunctionCalling": true,
+      "provider": "cerebras"
+    },
+    "cerebras/llama3.1-70b": {
+      "maxTokens": 128000,
+      "maxInputTokens": 128000,
+      "maxOutputTokens": 128000,
+      "inputCostPerToken": 6e-7,
+      "outputCostPerToken": 6e-7,
+      "mode": "chat",
+      "supportsFunctionCalling": true,
+      "provider": "cerebras"
+    },
     "friendliai/mixtral-8x7b-instruct-v0-1": {
       "maxTokens": 32768,
       "maxInputTokens": 32768,
@@ -1313,6 +1444,8 @@
       "maxOutputTokens": 4096,
       "inputCostPerToken": 2.5e-7,
       "outputCostPerToken": 0.00000125,
+      "cacheCreationInputTokenCost": 3e-7,
+      "cacheReadInputTokenCost": 3e-8,
       "mode": "chat",
       "supportsFunctionCalling": true,
       "supportsVision": true,
@@ -1326,6 +1459,8 @@
       "maxOutputTokens": 4096,
       "inputCostPerToken": 0.000015,
       "outputCostPerToken": 0.000075,
+      "cacheCreationInputTokenCost": 0.00001875,
+      "cacheReadInputTokenCost": 0.0000015,
       "mode": "chat",
       "supportsFunctionCalling": true,
       "supportsVision": true,
@@ -1347,11 +1482,13 @@
       "provider": "anthropic"
     },
     "claude-3-5-sonnet-20240620": {
-      "maxTokens": 4096,
+      "maxTokens": 8192,
       "maxInputTokens": 200000,
-      "maxOutputTokens": 4096,
+      "maxOutputTokens": 8192,
       "inputCostPerToken": 0.000003,
       "outputCostPerToken": 0.000015,
+      "cacheCreationInputTokenCost": 0.00000375,
+      "cacheReadInputTokenCost": 3e-7,
       "mode": "chat",
       "supportsFunctionCalling": true,
       "supportsVision": true,
@@ -1912,6 +2049,39 @@
       "supportsSystemMessages": true,
       "supportsFunctionCalling": true,
       "supportsVision": true,
+      "supportsResponseSchema": true,
+      "source": "https://cloud.google.com/vertex-ai/generative-ai/docs/learn/models#foundation_models",
+      "provider": "vertex_ai-language-models"
+    },
+    "gemini-1.5-flash-exp-0827": {
+      "maxTokens": 8192,
+      "maxInputTokens": 1000000,
+      "maxOutputTokens": 8192,
+      "maxImagesPerPrompt": 3000,
+      "maxVideosPerPrompt": 10,
+      "maxVideoLength": 1,
+      "maxAudioLengthHours": 8.4,
+      "maxAudioPerPrompt": 1,
+      "maxPdfSizeMb": 30,
+      "inputCostPerImage": 0.0001315,
+      "inputCostPerVideoPerSecond": 0.0001315,
+      "inputCostPerAudioPerSecond": 0.000125,
+      "inputCostPerToken": 5e-7,
+      "inputCostPerCharacter": 1.25e-7,
+      "inputCostPerTokenAbove128kTokens": 0.000001,
+      "inputCostPerCharacterAbove128kTokens": 2.5e-7,
+      "outputCostPerToken": 0.0000015,
+      "outputCostPerCharacter": 3.75e-7,
+      "outputCostPerTokenAbove128kTokens": 0.000003,
+      "outputCostPerCharacterAbove128kTokens": 7.5e-7,
+      "outputCostPerImage": 0.000263,
+      "outputCostPerVideoPerSecond": 0.000263,
+      "outputCostPerAudioPerSecond": 0.00025,
+      "mode": "chat",
+      "supportsSystemMessages": true,
+      "supportsFunctionCalling": true,
+      "supportsVision": true,
+      "supportsResponseSchema": true,
       "source": "https://cloud.google.com/vertex-ai/generative-ai/docs/learn/models#foundation_models",
       "provider": "vertex_ai-language-models"
     },
@@ -1943,6 +2113,7 @@
       "supportsSystemMessages": true,
       "supportsFunctionCalling": true,
       "supportsVision": true,
+      "supportsResponseSchema": true,
       "source": "https://cloud.google.com/vertex-ai/generative-ai/docs/learn/models#foundation_models",
       "provider": "vertex_ai-language-models"
     },
@@ -1977,16 +2148,32 @@
       "source": "https://cloud.google.com/vertex-ai/generative-ai/docs/learn/models#foundation_models",
       "provider": "vertex_ai-language-models"
     },
-    "gemini-experimental": {
+    "gemini-pro-experimental": {
       "maxTokens": 8192,
       "maxInputTokens": 1000000,
       "maxOutputTokens": 8192,
       "inputCostPerToken": 0,
       "outputCostPerToken": 0,
+      "inputCostPerCharacter": 0,
+      "outputCostPerCharacter": 0,
       "mode": "chat",
       "supportsFunctionCalling": false,
       "supportsToolChoice": true,
-      "source": "https://cloud.google.com/vertex-ai/generative-ai/docs/learn/models#foundation_models",
+      "source": "https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/gemini-experimental",
+      "provider": "vertex_ai-language-models"
+    },
+    "gemini-pro-flash": {
+      "maxTokens": 8192,
+      "maxInputTokens": 1000000,
+      "maxOutputTokens": 8192,
+      "inputCostPerToken": 0,
+      "outputCostPerToken": 0,
+      "inputCostPerCharacter": 0,
+      "outputCostPerCharacter": 0,
+      "mode": "chat",
+      "supportsFunctionCalling": false,
+      "supportsToolChoice": true,
+      "source": "https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/gemini-experimental",
       "provider": "vertex_ai-language-models"
     },
     "gemini-pro-vision": {
@@ -2067,9 +2254,9 @@
       "provider": "vertex_ai-anthropic_models"
     },
     "vertex_ai/claude-3-5-sonnet@20240620": {
-      "maxTokens": 4096,
+      "maxTokens": 8192,
       "maxInputTokens": 200000,
-      "maxOutputTokens": 4096,
+      "maxOutputTokens": 8192,
       "inputCostPerToken": 0.000003,
       "outputCostPerToken": 0.000015,
       "mode": "chat",
@@ -2142,6 +2329,51 @@
       "supportsFunctionCalling": true,
       "provider": "vertex_ai-mistral_models"
     },
+    "vertex_ai/jamba-1.5-mini@001": {
+      "maxTokens": 256000,
+      "maxInputTokens": 256000,
+      "maxOutputTokens": 256000,
+      "inputCostPerToken": 2e-7,
+      "outputCostPerToken": 4e-7,
+      "mode": "chat",
+      "provider": "vertex_ai-ai21_models"
+    },
+    "vertex_ai/jamba-1.5-large@001": {
+      "maxTokens": 256000,
+      "maxInputTokens": 256000,
+      "maxOutputTokens": 256000,
+      "inputCostPerToken": 0.000002,
+      "outputCostPerToken": 0.000008,
+      "mode": "chat",
+      "provider": "vertex_ai-ai21_models"
+    },
+    "vertex_ai/jamba-1.5": {
+      "maxTokens": 256000,
+      "maxInputTokens": 256000,
+      "maxOutputTokens": 256000,
+      "inputCostPerToken": 2e-7,
+      "outputCostPerToken": 4e-7,
+      "mode": "chat",
+      "provider": "vertex_ai-ai21_models"
+    },
+    "vertex_ai/jamba-1.5-mini": {
+      "maxTokens": 256000,
+      "maxInputTokens": 256000,
+      "maxOutputTokens": 256000,
+      "inputCostPerToken": 2e-7,
+      "outputCostPerToken": 4e-7,
+      "mode": "chat",
+      "provider": "vertex_ai-ai21_models"
+    },
+    "vertex_ai/jamba-1.5-large": {
+      "maxTokens": 256000,
+      "maxInputTokens": 256000,
+      "maxOutputTokens": 256000,
+      "inputCostPerToken": 0.000002,
+      "outputCostPerToken": 0.000008,
+      "mode": "chat",
+      "provider": "vertex_ai-ai21_models"
+    },
     "vertex_ai/mistral-nemo@2407": {
       "maxTokens": 128000,
       "maxInputTokens": 128000,
@@ -2173,6 +2405,18 @@
       "provider": "vertex_ai-mistral_models"
     },
     "vertex_ai/imagegeneration@006": {
+      "costPerImage": 0.02,
+      "mode": "image_generation",
+      "source": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
+      "provider": "vertex_ai-image-models"
+    },
+    "vertex_ai/imagen-3.0-generate-001": {
+      "costPerImage": 0.04,
+      "mode": "image_generation",
+      "source": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
+      "provider": "vertex_ai-image-models"
+    },
+    "vertex_ai/imagen-3.0-fast-generate-001": {
       "costPerImage": 0.02,
       "mode": "image_generation",
       "source": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
@@ -2329,6 +2573,28 @@
       "source": "https://cloud.google.com/vertex-ai/generative-ai/docs/learn/models#foundation_models",
       "provider": "palm"
     },
+    "gemini/gemini-1.5-flash-001": {
+      "maxTokens": 8192,
+      "maxInputTokens": 1000000,
+      "maxOutputTokens": 8192,
+      "maxImagesPerPrompt": 3000,
+      "maxVideosPerPrompt": 10,
+      "maxVideoLength": 1,
+      "maxAudioLengthHours": 8.4,
+      "maxAudioPerPrompt": 1,
+      "maxPdfSizeMb": 30,
+      "inputCostPerToken": 7.5e-8,
+      "inputCostPerTokenAbove128kTokens": 1.5e-7,
+      "outputCostPerToken": 3e-7,
+      "outputCostPerTokenAbove128kTokens": 6e-7,
+      "mode": "chat",
+      "supportsSystemMessages": true,
+      "supportsFunctionCalling": true,
+      "supportsVision": true,
+      "supportsResponseSchema": true,
+      "source": "https://ai.google.dev/pricing",
+      "provider": "gemini"
+    },
     "gemini/gemini-1.5-flash": {
       "maxTokens": 8192,
       "maxInputTokens": 1000000,
@@ -2339,15 +2605,16 @@
       "maxAudioLengthHours": 8.4,
       "maxAudioPerPrompt": 1,
       "maxPdfSizeMb": 30,
-      "inputCostPerToken": 3.5e-7,
-      "inputCostPerTokenAbove128kTokens": 7e-7,
-      "outputCostPerToken": 0.00000105,
-      "outputCostPerTokenAbove128kTokens": 0.0000021,
+      "inputCostPerToken": 7.5e-8,
+      "inputCostPerTokenAbove128kTokens": 1.5e-7,
+      "outputCostPerToken": 3e-7,
+      "outputCostPerTokenAbove128kTokens": 6e-7,
       "mode": "chat",
       "supportsSystemMessages": true,
       "supportsFunctionCalling": true,
       "supportsVision": true,
-      "source": "https://cloud.google.com/vertex-ai/generative-ai/docs/learn/models#foundation_models",
+      "supportsResponseSchema": true,
+      "source": "https://ai.google.dev/pricing",
       "provider": "gemini"
     },
     "gemini/gemini-1.5-flash-latest": {
@@ -2360,15 +2627,59 @@
       "maxAudioLengthHours": 8.4,
       "maxAudioPerPrompt": 1,
       "maxPdfSizeMb": 30,
-      "inputCostPerToken": 3.5e-7,
-      "inputCostPerTokenAbove128kTokens": 7e-7,
-      "outputCostPerToken": 0.00000105,
-      "outputCostPerTokenAbove128kTokens": 0.0000021,
+      "inputCostPerToken": 7.5e-8,
+      "inputCostPerTokenAbove128kTokens": 1.5e-7,
+      "outputCostPerToken": 3e-7,
+      "outputCostPerTokenAbove128kTokens": 6e-7,
       "mode": "chat",
       "supportsSystemMessages": true,
       "supportsFunctionCalling": true,
       "supportsVision": true,
-      "source": "https://cloud.google.com/vertex-ai/generative-ai/docs/learn/models#foundation_models",
+      "supportsResponseSchema": true,
+      "source": "https://ai.google.dev/pricing",
+      "provider": "gemini"
+    },
+    "gemini/gemini-1.5-flash-exp-0827": {
+      "maxTokens": 8192,
+      "maxInputTokens": 1000000,
+      "maxOutputTokens": 8192,
+      "maxImagesPerPrompt": 3000,
+      "maxVideosPerPrompt": 10,
+      "maxVideoLength": 1,
+      "maxAudioLengthHours": 8.4,
+      "maxAudioPerPrompt": 1,
+      "maxPdfSizeMb": 30,
+      "inputCostPerToken": 0,
+      "inputCostPerTokenAbove128kTokens": 0,
+      "outputCostPerToken": 0,
+      "outputCostPerTokenAbove128kTokens": 0,
+      "mode": "chat",
+      "supportsSystemMessages": true,
+      "supportsFunctionCalling": true,
+      "supportsVision": true,
+      "supportsResponseSchema": true,
+      "source": "https://ai.google.dev/pricing",
+      "provider": "gemini"
+    },
+    "gemini/gemini-1.5-flash-8b-exp-0827": {
+      "maxTokens": 8192,
+      "maxInputTokens": 1000000,
+      "maxOutputTokens": 8192,
+      "maxImagesPerPrompt": 3000,
+      "maxVideosPerPrompt": 10,
+      "maxVideoLength": 1,
+      "maxAudioLengthHours": 8.4,
+      "maxAudioPerPrompt": 1,
+      "maxPdfSizeMb": 30,
+      "inputCostPerToken": 0,
+      "inputCostPerTokenAbove128kTokens": 0,
+      "outputCostPerToken": 0,
+      "outputCostPerTokenAbove128kTokens": 0,
+      "mode": "chat",
+      "supportsSystemMessages": true,
+      "supportsFunctionCalling": true,
+      "supportsVision": true,
+      "source": "https://ai.google.dev/pricing",
       "provider": "gemini"
     },
     "gemini/gemini-pro": {
@@ -2409,6 +2720,23 @@
       "inputCostPerTokenAbove128kTokens": 0.000007,
       "outputCostPerToken": 0.0000105,
       "outputCostPerTokenAbove128kTokens": 0.000021,
+      "mode": "chat",
+      "supportsSystemMessages": true,
+      "supportsFunctionCalling": true,
+      "supportsVision": true,
+      "supportsToolChoice": true,
+      "supportsResponseSchema": true,
+      "source": "https://ai.google.dev/pricing",
+      "provider": "gemini"
+    },
+    "gemini/gemini-1.5-pro-exp-0827": {
+      "maxTokens": 8192,
+      "maxInputTokens": 2097152,
+      "maxOutputTokens": 8192,
+      "inputCostPerToken": 0,
+      "inputCostPerTokenAbove128kTokens": 0,
+      "outputCostPerToken": 0,
+      "outputCostPerTokenAbove128kTokens": 0,
       "mode": "chat",
       "supportsSystemMessages": true,
       "supportsFunctionCalling": true,
@@ -2475,8 +2803,18 @@
       "maxTokens": 4096,
       "maxInputTokens": 128000,
       "maxOutputTokens": 4096,
-      "inputCostPerToken": 5e-7,
-      "outputCostPerToken": 0.0000015,
+      "inputCostPerToken": 1.5e-7,
+      "outputCostPerToken": 6e-7,
+      "mode": "chat",
+      "supportsFunctionCalling": true,
+      "provider": "cohere_chat"
+    },
+    "command-r-08-2024": {
+      "maxTokens": 4096,
+      "maxInputTokens": 128000,
+      "maxOutputTokens": 4096,
+      "inputCostPerToken": 1.5e-7,
+      "outputCostPerToken": 6e-7,
       "mode": "chat",
       "supportsFunctionCalling": true,
       "provider": "cohere_chat"
@@ -2485,8 +2823,8 @@
       "maxTokens": 4096,
       "maxInputTokens": 4096,
       "maxOutputTokens": 4096,
-      "inputCostPerToken": 0.000015,
-      "outputCostPerToken": 0.000015,
+      "inputCostPerToken": 3e-7,
+      "outputCostPerToken": 6e-7,
       "mode": "chat",
       "provider": "cohere_chat"
     },
@@ -2494,8 +2832,18 @@
       "maxTokens": 4096,
       "maxInputTokens": 128000,
       "maxOutputTokens": 4096,
-      "inputCostPerToken": 0.000003,
-      "outputCostPerToken": 0.000015,
+      "inputCostPerToken": 0.0000025,
+      "outputCostPerToken": 0.00001,
+      "mode": "chat",
+      "supportsFunctionCalling": true,
+      "provider": "cohere_chat"
+    },
+    "command-r-plus-08-2024": {
+      "maxTokens": 4096,
+      "maxInputTokens": 128000,
+      "maxOutputTokens": 4096,
+      "inputCostPerToken": 0.0000025,
+      "outputCostPerToken": 0.00001,
       "mode": "chat",
       "supportsFunctionCalling": true,
       "provider": "cohere_chat"
@@ -2504,8 +2852,8 @@
       "maxTokens": 4096,
       "maxInputTokens": 4096,
       "maxOutputTokens": 4096,
-      "inputCostPerToken": 0.000015,
-      "outputCostPerToken": 0.000015,
+      "inputCostPerToken": 0.000001,
+      "outputCostPerToken": 0.000002,
       "mode": "completion",
       "provider": "cohere"
     },
@@ -2513,26 +2861,8 @@
       "maxTokens": 4096,
       "maxInputTokens": 4096,
       "maxOutputTokens": 4096,
-      "inputCostPerToken": 0.000015,
-      "outputCostPerToken": 0.000015,
-      "mode": "completion",
-      "provider": "cohere"
-    },
-    "command-medium-beta": {
-      "maxTokens": 4096,
-      "maxInputTokens": 4096,
-      "maxOutputTokens": 4096,
-      "inputCostPerToken": 0.000015,
-      "outputCostPerToken": 0.000015,
-      "mode": "completion",
-      "provider": "cohere"
-    },
-    "command-xlarge-beta": {
-      "maxTokens": 4096,
-      "maxInputTokens": 4096,
-      "maxOutputTokens": 4096,
-      "inputCostPerToken": 0.000015,
-      "outputCostPerToken": 0.000015,
+      "inputCostPerToken": 0.000001,
+      "outputCostPerToken": 0.000002,
       "mode": "completion",
       "provider": "cohere"
     },
@@ -2773,9 +3103,22 @@
       "provider": "openrouter"
     },
     "openrouter/anthropic/claude-3.5-sonnet": {
-      "maxTokens": 4096,
+      "maxTokens": 8192,
       "maxInputTokens": 200000,
-      "maxOutputTokens": 4096,
+      "maxOutputTokens": 8192,
+      "inputCostPerToken": 0.000003,
+      "outputCostPerToken": 0.000015,
+      "mode": "chat",
+      "supportsFunctionCalling": true,
+      "supportsVision": true,
+      "toolUseSystemPromptTokens": 159,
+      "supportsAssistantPrefill": true,
+      "provider": "openrouter"
+    },
+    "openrouter/anthropic/claude-3.5-sonnet:beta": {
+      "maxTokens": 8192,
+      "maxInputTokens": 200000,
+      "maxOutputTokens": 8192,
       "inputCostPerToken": 0.000003,
       "outputCostPerToken": 0.000015,
       "mode": "chat",
@@ -2852,6 +3195,54 @@
       "outputCostPerToken": 7.9e-7,
       "mode": "chat",
       "provider": "openrouter"
+    },
+    "openrouter/openai/o1-mini": {
+      "maxTokens": 65536,
+      "maxInputTokens": 128000,
+      "maxOutputTokens": 65536,
+      "inputCostPerToken": 0.000003,
+      "outputCostPerToken": 0.000012,
+      "mode": "chat",
+      "supportsFunctionCalling": true,
+      "supportsParallelFunctionCalling": true,
+      "supportsVision": true,
+      "provider": "openai"
+    },
+    "openrouter/openai/o1-mini-2024-09-12": {
+      "maxTokens": 65536,
+      "maxInputTokens": 128000,
+      "maxOutputTokens": 65536,
+      "inputCostPerToken": 0.000003,
+      "outputCostPerToken": 0.000012,
+      "mode": "chat",
+      "supportsFunctionCalling": true,
+      "supportsParallelFunctionCalling": true,
+      "supportsVision": true,
+      "provider": "openai"
+    },
+    "openrouter/openai/o1-preview": {
+      "maxTokens": 32768,
+      "maxInputTokens": 128000,
+      "maxOutputTokens": 32768,
+      "inputCostPerToken": 0.000015,
+      "outputCostPerToken": 0.00006,
+      "mode": "chat",
+      "supportsFunctionCalling": true,
+      "supportsParallelFunctionCalling": true,
+      "supportsVision": true,
+      "provider": "openai"
+    },
+    "openrouter/openai/o1-preview-2024-09-12": {
+      "maxTokens": 32768,
+      "maxInputTokens": 128000,
+      "maxOutputTokens": 32768,
+      "inputCostPerToken": 0.000015,
+      "outputCostPerToken": 0.00006,
+      "mode": "chat",
+      "supportsFunctionCalling": true,
+      "supportsParallelFunctionCalling": true,
+      "supportsVision": true,
+      "provider": "openai"
     },
     "openrouter/openai/gpt-4o": {
       "maxTokens": 4096,
@@ -3036,6 +3427,51 @@
       "mode": "completion",
       "provider": "ai21"
     },
+    "jamba-1.5-mini@001": {
+      "maxTokens": 256000,
+      "maxInputTokens": 256000,
+      "maxOutputTokens": 256000,
+      "inputCostPerToken": 2e-7,
+      "outputCostPerToken": 4e-7,
+      "mode": "chat",
+      "provider": "ai21"
+    },
+    "jamba-1.5-large@001": {
+      "maxTokens": 256000,
+      "maxInputTokens": 256000,
+      "maxOutputTokens": 256000,
+      "inputCostPerToken": 0.000002,
+      "outputCostPerToken": 0.000008,
+      "mode": "chat",
+      "provider": "ai21"
+    },
+    "jamba-1.5": {
+      "maxTokens": 256000,
+      "maxInputTokens": 256000,
+      "maxOutputTokens": 256000,
+      "inputCostPerToken": 2e-7,
+      "outputCostPerToken": 4e-7,
+      "mode": "chat",
+      "provider": "ai21"
+    },
+    "jamba-1.5-mini": {
+      "maxTokens": 256000,
+      "maxInputTokens": 256000,
+      "maxOutputTokens": 256000,
+      "inputCostPerToken": 2e-7,
+      "outputCostPerToken": 4e-7,
+      "mode": "chat",
+      "provider": "ai21"
+    },
+    "jamba-1.5-large": {
+      "maxTokens": 256000,
+      "maxInputTokens": 256000,
+      "maxOutputTokens": 256000,
+      "inputCostPerToken": 0.000002,
+      "outputCostPerToken": 0.000008,
+      "mode": "chat",
+      "provider": "ai21"
+    },
     "j2-mid": {
       "maxTokens": 8192,
       "maxInputTokens": 8192,
@@ -3160,6 +3596,15 @@
       "mode": "chat",
       "provider": "bedrock"
     },
+    "amazon.titan-text-premier-v1:0": {
+      "maxTokens": 32000,
+      "maxInputTokens": 42000,
+      "maxOutputTokens": 32000,
+      "inputCostPerToken": 5e-7,
+      "outputCostPerToken": 0.0000015,
+      "mode": "chat",
+      "provider": "bedrock"
+    },
     "amazon.titan-embed-text-v1": {
       "maxTokens": 8192,
       "maxInputTokens": 8192,
@@ -3212,6 +3657,16 @@
       "maxOutputTokens": 8191,
       "inputCostPerToken": 0.000003,
       "outputCostPerToken": 0.000009,
+      "mode": "chat",
+      "supportsFunctionCalling": true,
+      "provider": "bedrock"
+    },
+    "mistral.mistral-small-2402-v1:0": {
+      "maxTokens": 8191,
+      "maxInputTokens": 32000,
+      "maxOutputTokens": 8191,
+      "inputCostPerToken": 0.000001,
+      "outputCostPerToken": 0.000003,
       "mode": "chat",
       "supportsFunctionCalling": true,
       "provider": "bedrock"
@@ -3311,9 +3766,9 @@
       "provider": "bedrock"
     },
     "anthropic.claude-3-5-sonnet-20240620-v1:0": {
-      "maxTokens": 4096,
+      "maxTokens": 8192,
       "maxInputTokens": 200000,
-      "maxOutputTokens": 4096,
+      "maxOutputTokens": 8192,
       "inputCostPerToken": 0.000003,
       "outputCostPerToken": 0.000015,
       "mode": "chat",
@@ -3333,6 +3788,94 @@
       "provider": "bedrock"
     },
     "anthropic.claude-3-opus-20240229-v1:0": {
+      "maxTokens": 4096,
+      "maxInputTokens": 200000,
+      "maxOutputTokens": 4096,
+      "inputCostPerToken": 0.000015,
+      "outputCostPerToken": 0.000075,
+      "mode": "chat",
+      "supportsFunctionCalling": true,
+      "supportsVision": true,
+      "provider": "bedrock"
+    },
+    "us.anthropic.claude-3-sonnet-20240229-v1:0": {
+      "maxTokens": 4096,
+      "maxInputTokens": 200000,
+      "maxOutputTokens": 4096,
+      "inputCostPerToken": 0.000003,
+      "outputCostPerToken": 0.000015,
+      "mode": "chat",
+      "supportsFunctionCalling": true,
+      "supportsVision": true,
+      "provider": "bedrock"
+    },
+    "us.anthropic.claude-3-5-sonnet-20240620-v1:0": {
+      "maxTokens": 8192,
+      "maxInputTokens": 200000,
+      "maxOutputTokens": 8192,
+      "inputCostPerToken": 0.000003,
+      "outputCostPerToken": 0.000015,
+      "mode": "chat",
+      "supportsFunctionCalling": true,
+      "supportsVision": true,
+      "provider": "bedrock"
+    },
+    "us.anthropic.claude-3-haiku-20240307-v1:0": {
+      "maxTokens": 4096,
+      "maxInputTokens": 200000,
+      "maxOutputTokens": 4096,
+      "inputCostPerToken": 2.5e-7,
+      "outputCostPerToken": 0.00000125,
+      "mode": "chat",
+      "supportsFunctionCalling": true,
+      "supportsVision": true,
+      "provider": "bedrock"
+    },
+    "us.anthropic.claude-3-opus-20240229-v1:0": {
+      "maxTokens": 4096,
+      "maxInputTokens": 200000,
+      "maxOutputTokens": 4096,
+      "inputCostPerToken": 0.000015,
+      "outputCostPerToken": 0.000075,
+      "mode": "chat",
+      "supportsFunctionCalling": true,
+      "supportsVision": true,
+      "provider": "bedrock"
+    },
+    "eu.anthropic.claude-3-sonnet-20240229-v1:0": {
+      "maxTokens": 8192,
+      "maxInputTokens": 200000,
+      "maxOutputTokens": 8192,
+      "inputCostPerToken": 0.000003,
+      "outputCostPerToken": 0.000015,
+      "mode": "chat",
+      "supportsFunctionCalling": true,
+      "supportsVision": true,
+      "provider": "bedrock"
+    },
+    "eu.anthropic.claude-3-5-sonnet-20240620-v1:0": {
+      "maxTokens": 8192,
+      "maxInputTokens": 200000,
+      "maxOutputTokens": 8192,
+      "inputCostPerToken": 0.000003,
+      "outputCostPerToken": 0.000015,
+      "mode": "chat",
+      "supportsFunctionCalling": true,
+      "supportsVision": true,
+      "provider": "bedrock"
+    },
+    "eu.anthropic.claude-3-haiku-20240307-v1:0": {
+      "maxTokens": 4096,
+      "maxInputTokens": 200000,
+      "maxOutputTokens": 4096,
+      "inputCostPerToken": 2.5e-7,
+      "outputCostPerToken": 0.00000125,
+      "mode": "chat",
+      "supportsFunctionCalling": true,
+      "supportsVision": true,
+      "provider": "bedrock"
+    },
+    "eu.anthropic.claude-3-opus-20240229-v1:0": {
       "maxTokens": 4096,
       "maxInputTokens": 200000,
       "maxOutputTokens": 4096,
@@ -3921,8 +4464,71 @@
       "maxTokens": 8192,
       "maxInputTokens": 8192,
       "maxOutputTokens": 8192,
-      "inputCostPerToken": 4e-7,
+      "inputCostPerToken": 3e-7,
       "outputCostPerToken": 6e-7,
+      "mode": "chat",
+      "provider": "bedrock"
+    },
+    "bedrock/us-east-1/meta.llama3-8b-instruct-v1:0": {
+      "maxTokens": 8192,
+      "maxInputTokens": 8192,
+      "maxOutputTokens": 8192,
+      "inputCostPerToken": 3e-7,
+      "outputCostPerToken": 6e-7,
+      "mode": "chat",
+      "provider": "bedrock"
+    },
+    "bedrock/us-west-1/meta.llama3-8b-instruct-v1:0": {
+      "maxTokens": 8192,
+      "maxInputTokens": 8192,
+      "maxOutputTokens": 8192,
+      "inputCostPerToken": 3e-7,
+      "outputCostPerToken": 6e-7,
+      "mode": "chat",
+      "provider": "bedrock"
+    },
+    "bedrock/ap-south-1/meta.llama3-8b-instruct-v1:0": {
+      "maxTokens": 8192,
+      "maxInputTokens": 8192,
+      "maxOutputTokens": 8192,
+      "inputCostPerToken": 3.6e-7,
+      "outputCostPerToken": 7.2e-7,
+      "mode": "chat",
+      "provider": "bedrock"
+    },
+    "bedrock/ca-central-1/meta.llama3-8b-instruct-v1:0": {
+      "maxTokens": 8192,
+      "maxInputTokens": 8192,
+      "maxOutputTokens": 8192,
+      "inputCostPerToken": 3.5e-7,
+      "outputCostPerToken": 6.9e-7,
+      "mode": "chat",
+      "provider": "bedrock"
+    },
+    "bedrock/eu-west-1/meta.llama3-8b-instruct-v1:0": {
+      "maxTokens": 8192,
+      "maxInputTokens": 8192,
+      "maxOutputTokens": 8192,
+      "inputCostPerToken": 3.2e-7,
+      "outputCostPerToken": 6.5e-7,
+      "mode": "chat",
+      "provider": "bedrock"
+    },
+    "bedrock/eu-west-2/meta.llama3-8b-instruct-v1:0": {
+      "maxTokens": 8192,
+      "maxInputTokens": 8192,
+      "maxOutputTokens": 8192,
+      "inputCostPerToken": 3.9e-7,
+      "outputCostPerToken": 7.8e-7,
+      "mode": "chat",
+      "provider": "bedrock"
+    },
+    "bedrock/sa-east-1/meta.llama3-8b-instruct-v1:0": {
+      "maxTokens": 8192,
+      "maxInputTokens": 8192,
+      "maxOutputTokens": 8192,
+      "inputCostPerToken": 5e-7,
+      "outputCostPerToken": 0.00000101,
       "mode": "chat",
       "provider": "bedrock"
     },
@@ -3935,12 +4541,75 @@
       "mode": "chat",
       "provider": "bedrock"
     },
+    "bedrock/us-east-1/meta.llama3-70b-instruct-v1:0": {
+      "maxTokens": 8192,
+      "maxInputTokens": 8192,
+      "maxOutputTokens": 8192,
+      "inputCostPerToken": 0.00000265,
+      "outputCostPerToken": 0.0000035,
+      "mode": "chat",
+      "provider": "bedrock"
+    },
+    "bedrock/us-west-1/meta.llama3-70b-instruct-v1:0": {
+      "maxTokens": 8192,
+      "maxInputTokens": 8192,
+      "maxOutputTokens": 8192,
+      "inputCostPerToken": 0.00000265,
+      "outputCostPerToken": 0.0000035,
+      "mode": "chat",
+      "provider": "bedrock"
+    },
+    "bedrock/ap-south-1/meta.llama3-70b-instruct-v1:0": {
+      "maxTokens": 8192,
+      "maxInputTokens": 8192,
+      "maxOutputTokens": 8192,
+      "inputCostPerToken": 0.00000318,
+      "outputCostPerToken": 0.0000042,
+      "mode": "chat",
+      "provider": "bedrock"
+    },
+    "bedrock/ca-central-1/meta.llama3-70b-instruct-v1:0": {
+      "maxTokens": 8192,
+      "maxInputTokens": 8192,
+      "maxOutputTokens": 8192,
+      "inputCostPerToken": 0.00000305,
+      "outputCostPerToken": 0.00000403,
+      "mode": "chat",
+      "provider": "bedrock"
+    },
+    "bedrock/eu-west-1/meta.llama3-70b-instruct-v1:0": {
+      "maxTokens": 8192,
+      "maxInputTokens": 8192,
+      "maxOutputTokens": 8192,
+      "inputCostPerToken": 0.00000286,
+      "outputCostPerToken": 0.00000378,
+      "mode": "chat",
+      "provider": "bedrock"
+    },
+    "bedrock/eu-west-2/meta.llama3-70b-instruct-v1:0": {
+      "maxTokens": 8192,
+      "maxInputTokens": 8192,
+      "maxOutputTokens": 8192,
+      "inputCostPerToken": 0.00000345,
+      "outputCostPerToken": 0.00000455,
+      "mode": "chat",
+      "provider": "bedrock"
+    },
+    "bedrock/sa-east-1/meta.llama3-70b-instruct-v1:0": {
+      "maxTokens": 8192,
+      "maxInputTokens": 8192,
+      "maxOutputTokens": 8192,
+      "inputCostPerToken": 0.00000445,
+      "outputCostPerToken": 0.00000588,
+      "mode": "chat",
+      "provider": "bedrock"
+    },
     "meta.llama3-1-8b-instruct-v1:0": {
       "maxTokens": 128000,
       "maxInputTokens": 128000,
       "maxOutputTokens": 2048,
-      "inputCostPerToken": 4e-7,
-      "outputCostPerToken": 6e-7,
+      "inputCostPerToken": 2.2e-7,
+      "outputCostPerToken": 2.2e-7,
       "mode": "chat",
       "supportsFunctionCalling": true,
       "supportsToolChoice": false,
@@ -3950,8 +4619,8 @@
       "maxTokens": 128000,
       "maxInputTokens": 128000,
       "maxOutputTokens": 2048,
-      "inputCostPerToken": 0.00000265,
-      "outputCostPerToken": 0.0000035,
+      "inputCostPerToken": 9.9e-7,
+      "outputCostPerToken": 9.9e-7,
       "mode": "chat",
       "supportsFunctionCalling": true,
       "supportsToolChoice": false,
@@ -4978,89 +5647,149 @@
       "maxInputTokens": 128000,
       "maxOutputTokens": 128000,
       "inputCostPerToken": 0.000005,
-      "outputCostPerToken": 0.000015,
+      "inputDbuCostPerToken": 0.000071429,
+      "outputCostPerToken": 0.00001500002,
+      "outputDbCostPerToken": 0.000214286,
       "mode": "chat",
       "source": "https://www.databricks.com/product/pricing/foundation-model-serving",
+      "metadata": {
+        "notes": "Input/output cost per token is dbu cost * $0.070, based on databricks Llama 3.1 70B conversion. Number provided for reference, '*_dbu_cost_per_token' used in actual calculation."
+      },
       "provider": "databricks"
     },
     "databricks/databricks-meta-llama-3-1-70b-instruct": {
       "maxTokens": 128000,
       "maxInputTokens": 128000,
       "maxOutputTokens": 128000,
-      "inputCostPerToken": 0.000001,
-      "outputCostPerToken": 0.000003,
+      "inputCostPerToken": 0.00000100002,
+      "inputDbuCostPerToken": 0.000014286,
+      "outputCostPerToken": 0.00000299999,
+      "outputDbuCostPerToken": 0.000042857,
       "mode": "chat",
       "source": "https://www.databricks.com/product/pricing/foundation-model-serving",
+      "metadata": {
+        "notes": "Input/output cost per token is dbu cost * $0.070, based on databricks Llama 3.1 70B conversion. Number provided for reference, '*_dbu_cost_per_token' used in actual calculation."
+      },
       "provider": "databricks"
     },
     "databricks/databricks-dbrx-instruct": {
       "maxTokens": 32768,
       "maxInputTokens": 32768,
       "maxOutputTokens": 32768,
-      "inputCostPerToken": 7.5e-7,
-      "outputCostPerToken": 0.00000225,
+      "inputCostPerToken": 7.4998e-7,
+      "inputDbuCostPerToken": 0.000010714,
+      "outputCostPerToken": 0.00000224901,
+      "outputDbuCostPerToken": 0.000032143,
       "mode": "chat",
       "source": "https://www.databricks.com/product/pricing/foundation-model-serving",
+      "metadata": {
+        "notes": "Input/output cost per token is dbu cost * $0.070, based on databricks Llama 3.1 70B conversion. Number provided for reference, '*_dbu_cost_per_token' used in actual calculation."
+      },
       "provider": "databricks"
     },
     "databricks/databricks-meta-llama-3-70b-instruct": {
-      "maxTokens": 8192,
-      "maxInputTokens": 8192,
-      "maxOutputTokens": 8192,
-      "inputCostPerToken": 0.000001,
-      "outputCostPerToken": 0.000003,
+      "maxTokens": 128000,
+      "maxInputTokens": 128000,
+      "maxOutputTokens": 128000,
+      "inputCostPerToken": 0.00000100002,
+      "inputDbuCostPerToken": 0.000014286,
+      "outputCostPerToken": 0.00000299999,
+      "outputDbuCostPerToken": 0.000042857,
       "mode": "chat",
       "source": "https://www.databricks.com/product/pricing/foundation-model-serving",
+      "metadata": {
+        "notes": "Input/output cost per token is dbu cost * $0.070, based on databricks Llama 3.1 70B conversion. Number provided for reference, '*_dbu_cost_per_token' used in actual calculation."
+      },
       "provider": "databricks"
     },
     "databricks/databricks-llama-2-70b-chat": {
       "maxTokens": 4096,
       "maxInputTokens": 4096,
       "maxOutputTokens": 4096,
-      "inputCostPerToken": 5e-7,
+      "inputCostPerToken": 5.0001e-7,
+      "inputDbuCostPerToken": 0.000007143,
       "outputCostPerToken": 0.0000015,
+      "outputDbuCostPerToken": 0.000021429,
       "mode": "chat",
       "source": "https://www.databricks.com/product/pricing/foundation-model-serving",
+      "metadata": {
+        "notes": "Input/output cost per token is dbu cost * $0.070, based on databricks Llama 3.1 70B conversion. Number provided for reference, '*_dbu_cost_per_token' used in actual calculation."
+      },
       "provider": "databricks"
     },
     "databricks/databricks-mixtral-8x7b-instruct": {
       "maxTokens": 4096,
       "maxInputTokens": 4096,
       "maxOutputTokens": 4096,
-      "inputCostPerToken": 5e-7,
-      "outputCostPerToken": 0.000001,
+      "inputCostPerToken": 5.0001e-7,
+      "inputDbuCostPerToken": 0.000007143,
+      "outputCostPerToken": 9.9902e-7,
+      "outputDbuCostPerToken": 0.000014286,
       "mode": "chat",
       "source": "https://www.databricks.com/product/pricing/foundation-model-serving",
+      "metadata": {
+        "notes": "Input/output cost per token is dbu cost * $0.070, based on databricks Llama 3.1 70B conversion. Number provided for reference, '*_dbu_cost_per_token' used in actual calculation."
+      },
       "provider": "databricks"
     },
     "databricks/databricks-mpt-30b-instruct": {
       "maxTokens": 8192,
       "maxInputTokens": 8192,
       "maxOutputTokens": 8192,
-      "inputCostPerToken": 0.000001,
-      "outputCostPerToken": 0.000001,
+      "inputCostPerToken": 9.9902e-7,
+      "inputDbuCostPerToken": 0.000014286,
+      "outputCostPerToken": 9.9902e-7,
+      "outputDbuCostPerToken": 0.000014286,
       "mode": "chat",
       "source": "https://www.databricks.com/product/pricing/foundation-model-serving",
+      "metadata": {
+        "notes": "Input/output cost per token is dbu cost * $0.070, based on databricks Llama 3.1 70B conversion. Number provided for reference, '*_dbu_cost_per_token' used in actual calculation."
+      },
       "provider": "databricks"
     },
     "databricks/databricks-mpt-7b-instruct": {
       "maxTokens": 8192,
       "maxInputTokens": 8192,
       "maxOutputTokens": 8192,
-      "inputCostPerToken": 5e-7,
-      "outputCostPerToken": 5e-7,
+      "inputCostPerToken": 5.0001e-7,
+      "inputDbuCostPerToken": 0.000007143,
+      "outputCostPerToken": 0,
+      "outputDbuCostPerToken": 0,
       "mode": "chat",
       "source": "https://www.databricks.com/product/pricing/foundation-model-serving",
+      "metadata": {
+        "notes": "Input/output cost per token is dbu cost * $0.070, based on databricks Llama 3.1 70B conversion. Number provided for reference, '*_dbu_cost_per_token' used in actual calculation."
+      },
       "provider": "databricks"
     },
     "databricks/databricks-bge-large-en": {
       "maxTokens": 512,
       "maxInputTokens": 512,
       "outputVectorSize": 1024,
-      "inputCostPerToken": 1e-7,
+      "inputCostPerToken": 1.0003e-7,
+      "inputDbuCostPerToken": 0.000001429,
       "outputCostPerToken": 0,
+      "outputDbuCostPerToken": 0,
       "mode": "embedding",
       "source": "https://www.databricks.com/product/pricing/foundation-model-serving",
+      "metadata": {
+        "notes": "Input/output cost per token is dbu cost * $0.070, based on databricks Llama 3.1 70B conversion. Number provided for reference, '*_dbu_cost_per_token' used in actual calculation."
+      },
+      "provider": "databricks"
+    },
+    "databricks/databricks-gte-large-en": {
+      "maxTokens": 8192,
+      "maxInputTokens": 8192,
+      "outputVectorSize": 1024,
+      "inputCostPerToken": 1.2999e-7,
+      "inputDbuCostPerToken": 0.000001857,
+      "outputCostPerToken": 0,
+      "outputDbuCostPerToken": 0,
+      "mode": "embedding",
+      "source": "https://www.databricks.com/product/pricing/foundation-model-serving",
+      "metadata": {
+        "notes": "Input/output cost per token is dbu cost * $0.070, based on databricks Llama 3.1 70B conversion. Number provided for reference, '*_dbu_cost_per_token' used in actual calculation."
+      },
       "provider": "databricks"
     }
   },
@@ -5084,6 +5813,12 @@
       "providers": [
         "azure",
         "openrouter/openai"
+      ]
+    },
+    "gpt-4o-2024-08-06": {
+      "providers": [
+        "azure",
+        "azure/global-standard"
       ]
     },
     "gpt-4o-mini": {
@@ -5385,6 +6120,16 @@
         "groq"
       ]
     },
+    "llama3.1-8b": {
+      "providers": [
+        "cerebras"
+      ]
+    },
+    "llama3.1-70b": {
+      "providers": [
+        "cerebras"
+      ]
+    },
     "mixtral-8x7b-instruct-v0-1": {
       "providers": [
         "friendliai"
@@ -5440,6 +6185,31 @@
         "vertex_ai"
       ]
     },
+    "jamba-1.5-mini@001": {
+      "providers": [
+        "vertex_ai"
+      ]
+    },
+    "jamba-1.5-large@001": {
+      "providers": [
+        "vertex_ai"
+      ]
+    },
+    "jamba-1.5": {
+      "providers": [
+        "vertex_ai"
+      ]
+    },
+    "jamba-1.5-mini": {
+      "providers": [
+        "vertex_ai"
+      ]
+    },
+    "jamba-1.5-large": {
+      "providers": [
+        "vertex_ai"
+      ]
+    },
     "mistral-nemo@2407": {
       "providers": [
         "vertex_ai"
@@ -5485,12 +6255,27 @@
         "palm"
       ]
     },
+    "gemini-1.5-flash-001": {
+      "providers": [
+        "gemini"
+      ]
+    },
     "gemini-1.5-flash": {
       "providers": [
         "gemini"
       ]
     },
     "gemini-1.5-flash-latest": {
+      "providers": [
+        "gemini"
+      ]
+    },
+    "gemini-1.5-flash-exp-0827": {
+      "providers": [
+        "gemini"
+      ]
+    },
+    "gemini-1.5-flash-8b-exp-0827": {
       "providers": [
         "gemini"
       ]
@@ -5506,6 +6291,11 @@
       ]
     },
     "gemini-1.5-pro-exp-0801": {
+      "providers": [
+        "gemini"
+      ]
+    },
+    "gemini-1.5-pro-exp-0827": {
       "providers": [
         "gemini"
       ]
@@ -5640,6 +6430,11 @@
         "openrouter/anthropic"
       ]
     },
+    "claude-3.5-sonnet:beta": {
+      "providers": [
+        "openrouter/anthropic"
+      ]
+    },
     "claude-3-sonnet": {
       "providers": [
         "openrouter/anthropic"
@@ -5668,6 +6463,26 @@
     "llama-3-70b-instruct:nitro": {
       "providers": [
         "openrouter/meta-llama"
+      ]
+    },
+    "o1-mini": {
+      "providers": [
+        "openrouter/openai"
+      ]
+    },
+    "o1-mini-2024-09-12": {
+      "providers": [
+        "openrouter/openai"
+      ]
+    },
+    "o1-preview": {
+      "providers": [
+        "openrouter/openai"
+      ]
+    },
+    "o1-preview-2024-09-12": {
+      "providers": [
+        "openrouter/openai"
       ]
     },
     "gpt-4o-2024-05-13": {
@@ -5857,6 +6672,28 @@
       "providers": [
         "bedrock/*/1-month-commitment",
         "bedrock/*/6-month-commitment"
+      ]
+    },
+    "meta.llama3-8b-instruct-v1:0": {
+      "providers": [
+        "bedrock/us-east-1",
+        "bedrock/us-west-1",
+        "bedrock/ap-south-1",
+        "bedrock/ca-central-1",
+        "bedrock/eu-west-1",
+        "bedrock/eu-west-2",
+        "bedrock/sa-east-1"
+      ]
+    },
+    "meta.llama3-70b-instruct-v1:0": {
+      "providers": [
+        "bedrock/us-east-1",
+        "bedrock/us-west-1",
+        "bedrock/ap-south-1",
+        "bedrock/ca-central-1",
+        "bedrock/eu-west-1",
+        "bedrock/eu-west-2",
+        "bedrock/sa-east-1"
       ]
     },
     "meta-textgeneration-llama-2-7b": {
@@ -6343,6 +7180,11 @@
       "providers": [
         "databricks"
       ]
+    },
+    "databricks-gte-large-en": {
+      "providers": [
+        "databricks"
+      ]
     }
   },
   "imageModels": {
@@ -6382,6 +7224,30 @@
       ]
     },
     "imagegeneration@006": {
+      "costPerImage": 0.02,
+      "mode": "image_generation",
+      "source": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
+      "sizes": [],
+      "qualities": [
+        "vertex_ai"
+      ],
+      "providers": [
+        "vertex_ai-image-models"
+      ]
+    },
+    "imagen-3.0-generate-001": {
+      "costPerImage": 0.04,
+      "mode": "image_generation",
+      "source": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
+      "sizes": [],
+      "qualities": [
+        "vertex_ai"
+      ],
+      "providers": [
+        "vertex_ai-image-models"
+      ]
+    },
+    "imagen-3.0-fast-generate-001": {
       "costPerImage": 0.02,
       "mode": "image_generation",
       "source": "https://cloud.google.com/vertex-ai/generative-ai/pricing",

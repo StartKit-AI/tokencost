@@ -2,7 +2,7 @@ import fetch from "node-fetch";
 import { fileURLToPath } from "url";
 import fs from "fs/promises";
 import path from "path";
-import modelsData from "../data/model_prices_and_context_window.json" assert { type: "json" };
+import modelsData from "../data/model_prices_and_context_window.json" with { type: "json" };
 
 const { lastUpdated, models } = modelsData;
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
